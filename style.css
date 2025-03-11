@@ -1,22 +1,43 @@
+<style>
 body {
     font-family: Arial, sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?logistics,warehouse,shipment') no-repeat center center fixed;
+    background-size: cover;
     text-align: center;
-    margin: 20px;
+    padding: 20px;
 }
-
-input {
-    display: block;
-    margin: 10px auto;
-    padding: 5px;
-    width: 80%;
-    max-width: 300px;
-}
-
-button {
-    padding: 10px;
-    margin: 10px;
-    background-color: blue;
+h1 {
     color: white;
-    border: none;
-    cursor: pointer;
+    text-shadow: 2px 2px 5px black;
 }
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin: auto;
+}
+input, button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+button:hover {
+    background: #218838;
+}
+#result {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+</style>
