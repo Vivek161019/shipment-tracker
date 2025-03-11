@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script type="module">
+    // Import Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwUO80RZuSzNUgVx7FsfSZ3q5Xic4hbfc",
+  authDomain: "shipmenttracker-ce8d8.firebaseapp.com",
+  databaseURL: "https://shipmenttracker-ce8d8-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "shipmenttracker-ce8d8",
+  storageBucket: "shipmenttracker-ce8d8.firebasestorage.app",
+  messagingSenderId: "386322334064",
+  appId: "1:386322334064:web:005cd7794dd56e32ac8fb5"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Make Firebase available globally
+    window.db = db;
+    window.ref = ref;
+    window.set = set;
+    window.get = get;
+    window.child = child;
+</script>
+<body>
+    <h1>Shipment Tracking System</h1>
+
+    <label for="binBarcode">Scan Bin Barcode:</label>
+    <input type="text" id="binBarcode" placeholder="Enter Bin Barcode (e.g., L1R1)">
+
+    <label for="shipmentBarcode">Scan Shipment Barcode:</label>
+    <input type="text" id="shipmentBarcode" placeholder="Enter Shipment Barcode">
+
+    <button onclick="storeShipment()">Store Shipment</button>
+
+    <h2>Find Shipment Location</h2>
+    <input type="text" id="searchShipment" placeholder="Enter Shipment Number">
+    <button onclick="findShipment()">Find</button>
+
+    <p id="result"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
